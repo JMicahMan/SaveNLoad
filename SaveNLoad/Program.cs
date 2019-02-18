@@ -37,12 +37,12 @@ namespace SaveNLoad
 
             Console.WriteLine("Data Saved");
 
-            
+            Loader.Load(args);
         }
     }
-    class Loader
+    public class Loader
     {
-        static void Load(string[] args)
+        public static void Load(string[] args)
         {
             Stream stream = File.Open("output.xml", FileMode.Open);
             XmlSerializer serializer = new XmlSerializer(typeof(Test));
