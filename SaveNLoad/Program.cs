@@ -37,20 +37,27 @@ namespace SaveNLoad
 
             Console.WriteLine("Data Saved");
 
-            Loader.Load(args);
-        }
-    }
-    public class Loader
-    {
-        public static void Load(string[] args)
-        {
+            // Loader.Load(args);
+
             Stream stream = File.Open("output.xml", FileMode.Open);
-            XmlSerializer serializer = new XmlSerializer(typeof(Test));
+           // XmlSerializer serializer = new XmlSerializer(typeof(Test));
             Test obj2 = null;
             obj2 = (Test)serializer.Deserialize(stream);
             stream.Close();
+
         }
     }
+    //public class Loader
+    //{
+    //    public static void Load(string[] args)
+    //    {
+    //        Stream stream = File.Open("output.xml", FileMode.Open);
+    //        XmlSerializer serializer = new XmlSerializer(typeof(Test));
+    //        Test obj2 = null;
+    //        obj2 = (Test)serializer.Deserialize(stream);
+    //        stream.Close();
+    //    }
+    //}
 
 
 }
